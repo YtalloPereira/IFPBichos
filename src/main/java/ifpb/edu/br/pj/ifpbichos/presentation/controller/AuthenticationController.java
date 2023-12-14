@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import ifpb.edu.br.pj.ifpbichos.model.entity.User;
 import ifpb.edu.br.pj.ifpbichos.model.repository.UserRepository;
 import ifpb.edu.br.pj.ifpbichos.presentation.dto.AuthenticationDTO;
 
@@ -22,8 +23,12 @@ public class AuthenticationController {
 	
 	@PostMapping("/login")
 	public ResponseEntity login(@RequestBody AuthenticationDTO dto) {
-		System.out.println("chegou aqui");
+		User user = userRepository.findByLogin(dto.getEmail());
 		
-		return ResponseEntity.ok(userRepository.findByLogin(dto.getEmail()));
+		if(dto.getEmail().equals(user.getEmail()) && dto.getPassword().equals(user.getPassword())){
+			return ResponseEntity.ok(user);
+		}
+		
+		return ResponseEntity.badRequest().build();
 	}
 }
