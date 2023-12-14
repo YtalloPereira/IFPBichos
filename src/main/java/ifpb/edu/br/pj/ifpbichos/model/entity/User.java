@@ -1,8 +1,7 @@
 package ifpb.edu.br.pj.ifpbichos.model.entity;
 
+import java.io.Serializable;
 import java.util.Objects;
-
-import org.springframework.security.core.userdetails.UserDetails;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,7 +16,7 @@ import jakarta.persistence.UniqueConstraint;
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Table(name = "USERS", uniqueConstraints = {@UniqueConstraint(columnNames = {"USER_EMAIL","USER_LOGIN"})})
-public abstract class User implements UserDetails{
+public abstract class User implements Serializable{
 	
 	/**
 	 * 

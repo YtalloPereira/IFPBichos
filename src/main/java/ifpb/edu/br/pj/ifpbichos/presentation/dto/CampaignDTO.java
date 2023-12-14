@@ -16,6 +16,10 @@ public class CampaignDTO {
     private float collectionPercentage;
     private float balance;
     private float undirectedBalance;
+    
+    public CampaignDTO() {
+    	
+    }
 
     public Integer getId() {
         return id;

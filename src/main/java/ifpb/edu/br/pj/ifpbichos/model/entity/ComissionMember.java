@@ -1,12 +1,6 @@
 package ifpb.edu.br.pj.ifpbichos.model.entity;
 
-import java.util.Collection;
-import java.util.List;
 import java.util.Objects;
-
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import ifpb.edu.br.pj.ifpbichos.model.enums.ComissionMemberRole;
 
@@ -68,42 +62,5 @@ public class ComissionMember extends User {
 			return false;
 		ComissionMember other = (ComissionMember) obj;
 		return Objects.equals(CPF, other.CPF) && role == other.role;
-	}
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		if(this.role == ComissionMemberRole.ADMIN) {
-			return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
-		}else
-			return List.of(new SimpleGrantedAuthority("ROLE_USER"));
-	}
-	@Override
-	public String getPassword() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public String getUsername() {
-		// TODO Auto-generated method stub
-		return super.getLogin();
-	}
-	@Override
-	public boolean isAccountNonExpired() {
-		// TODO Auto-generated method stub
-		return true;
-	}
-	@Override
-	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
-		return true;
-	}
-	@Override
-	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
-		return true;
-	}
-	@Override
-	public boolean isEnabled() {
-		// TODO Auto-generated method stub
-		return true;
 	}
 }
