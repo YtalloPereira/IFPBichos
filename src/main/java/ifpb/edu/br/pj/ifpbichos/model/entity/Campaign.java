@@ -2,7 +2,9 @@ package ifpb.edu.br.pj.ifpbichos.model.entity;
 
 import java.io.File;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.Objects;
 
 import jakarta.persistence.Column;
@@ -26,32 +28,32 @@ public class Campaign implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	@Column(name = "START_DATE", nullable = false)
-	private LocalDateTime start;
+	private LocalDate start;
 	@Column(name = "END_DATE", nullable = false)
-	private LocalDateTime end;
+	private LocalDate end;
 	@Column(name = "CAMPAIGN_TITLE", nullable = false)
 	private String title;
 	@Column(name = "CAMPAIGN_DESCRIPTION")
 	private String description;
 	//true = ativa. false = encerrada
-	@Column(name = "CAMPAIGN_STATUS", nullable = false)
+	@Column(name = "CAMPAIGN_STATUS", nullable = true)
 	private boolean campaingStatus;
 	@Column(name = "CAMPAIGN_PET_IMAGE")
 	private File image;
 	@Column(name = "COLLECTION_GOAL", nullable = false)
 	private float collectionGoal;
-	@Column(name = "COLLECTION_PERCENTAGE", nullable = false)
+	@Column(name = "COLLECTION_PERCENTAGE", nullable = true)
 	private float collectionPercentage;
-	@Column(name = "BALANCE", nullable = false)
+	@Column(name = "BALANCE", nullable = true)
 	private float balance;
-	@Column(name = "UNDIRECTED_BALANCE", nullable = false)
+	@Column(name = "UNDIRECTED_BALANCE", nullable = true)
 	private float undirectedBalance;
 	
 	public Campaign() {
 		
 	}
 	
-	public Campaign(LocalDateTime start, LocalDateTime end, String title, String description, File image,float collectionPercentage,  float balance,
+	public Campaign(LocalDate start, LocalDate end, String title, String description, File image,float collectionPercentage,  float balance,
 	float undirectedBalance) {
 		this.start = start;
 		this.end = end;
@@ -63,13 +65,13 @@ public class Campaign implements Serializable {
 		this.undirectedBalance = 0;
 	}
 
-	public Campaign(Integer id, LocalDateTime start, LocalDateTime end, String title, String description, boolean campaingStatus, File image, float collectionGoal, float collectionPercentage, float balance, float undirectedBalance) {
+	public Campaign(Integer id, LocalDate start, LocalDate end, String title, String description, File image, float collectionGoal, float collectionPercentage, float balance, float undirectedBalance) {
 		this.id = id;
 		this.start = start;
 		this.end = end;
 		this.title = title;
 		this.description = description;
-		this.campaingStatus = campaingStatus;
+		this.campaingStatus = true;
 		this.image = image;
 		this.collectionGoal = collectionGoal;
 		this.collectionPercentage = collectionPercentage;
@@ -85,19 +87,19 @@ public class Campaign implements Serializable {
 		this.id = id;
 	}
 
-	public LocalDateTime getStart() {
+	public LocalDate getStart() {
 		return start;
 	}
 
-	public void setStart(LocalDateTime start) {
+	public void setStart(LocalDate start) {
 		this.start = start;
 	}
 
-	public LocalDateTime getEnd() {
+	public LocalDate getEnd() {
 		return end;
 	}
 
-	public void setEnd(LocalDateTime end) {
+	public void setEnd(LocalDate end) {
 		this.end = end;
 	}
 

@@ -1,13 +1,14 @@
 package ifpb.edu.br.pj.ifpbichos.presentation.dto;
 
 import java.io.File;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class CampaignDTO {
     
 	private Integer id;
-    private LocalDateTime start;
-    private LocalDateTime end;
+    private LocalDate start;
+    private LocalDate end;
     private String title;
     private String description;
     private boolean campaingStatus;
@@ -25,11 +26,11 @@ public class CampaignDTO {
         return id;
     }
 
-    public LocalDateTime getStart() {
+    public LocalDate getStart() {
         return start;
     }
 
-    public LocalDateTime getEnd() {
+    public LocalDate getEnd() {
         return end;
     }
 
@@ -69,11 +70,11 @@ public class CampaignDTO {
         this.id = id;
     }
 
-    public void setStart(LocalDateTime start) {
+    public void setStart(LocalDate start) {
         this.start = start;
     }
 
-    public void setEnd(LocalDateTime end) {
+    public void setEnd(LocalDate end) {
         this.end = end;
     }
 
@@ -109,7 +110,7 @@ public class CampaignDTO {
         this.undirectedBalance = undirectedBalance;
     }
 
-    public CampaignDTO(Integer id, LocalDateTime start, LocalDateTime end, String title, String description, boolean campaingStatus, File image, float collectionGoal, float collectionPercentage, float balance, float undirectedBalance) {
+    public CampaignDTO(Integer id, LocalDate start, LocalDate end, String title, String description, boolean campaingStatus, File image, float collectionGoal, float collectionPercentage, float balance, float undirectedBalance) {
         this.id = id;
         this.start = start;
         this.end = end;
@@ -123,7 +124,7 @@ public class CampaignDTO {
         this.undirectedBalance = undirectedBalance;
     }
 
-    public CampaignDTO(LocalDateTime start, LocalDateTime end, String title, String description, boolean campaingStatus, File image, float collectionGoal, float collectionPercentage, float balance, float undirectedBalance) {
+    public CampaignDTO(LocalDate start, LocalDate end, String title, String description, boolean campaingStatus, File image, float collectionGoal, float collectionPercentage, float balance, float undirectedBalance) {
         this.start = start;
         this.end = end;
         this.title = title;

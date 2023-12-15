@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class CampaignConverterService {
     public Campaign dtoToCampaign(CampaignDTO dto){
         if (dto != null) {
-            Campaign campaign = new Campaign(dto.getId(), dto.getStart(), dto.getEnd(), dto.getTitle(), dto.getDescription(), dto.isCampaingStatus(),
+            Campaign campaign = new Campaign(dto.getId(), dto.getStart(), dto.getEnd(), dto.getTitle(), dto.getDescription(),
                     dto.getImage(), dto.getCollectionGoal(), dto.getCollectionPercentage(), dto.getBalance(), dto.getUndirectedBalance());
             return campaign;
         }

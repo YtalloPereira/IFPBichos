@@ -47,7 +47,7 @@ public class CampaignController {
 
     @PostMapping
     public ResponseEntity save(@RequestBody CampaignDTO dto) {
-
+            System.out.println("SASAS");
         try {
             Campaign entity = converterService.dtoToCampaign(dto);
             entity = campaignService.save(entity);

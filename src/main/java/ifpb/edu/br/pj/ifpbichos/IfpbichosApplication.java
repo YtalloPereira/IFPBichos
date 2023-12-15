@@ -20,6 +20,8 @@ public class IfpbichosApplication implements WebMvcConfigurer, CommandLineRunner
 		registry
 			.addMapping("/**")
 			.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH");
+
+
 	}
 
 	@Override
