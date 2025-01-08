@@ -18,7 +18,7 @@ public class CampaignActionResourceDTO {
     private String action;
     private BigDecimal cost;
     private LocalDateTime completionDate;
-    private byte[] receipt;
+    private String receipt;
     private BigDecimal withdrawalFromUndirectedBalance;
 
 

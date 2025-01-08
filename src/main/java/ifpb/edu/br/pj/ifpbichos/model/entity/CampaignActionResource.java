@@ -36,9 +36,8 @@ public class CampaignActionResource implements Serializable {
     @Column(nullable = false, name = "DATE")
     private LocalDateTime completionDate;
 
-    @Lob
     @Column(name = "RECEIPT_IMAGE")
-    private byte[] receipt;
+    private String receipt;
 
     @Column(name = "UNDIRECTED_BALANCE_USED")
     private BigDecimal withdrawalFromUndirectedBalance;
